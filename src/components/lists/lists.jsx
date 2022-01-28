@@ -17,9 +17,20 @@ class Lists extends Component {
     this.setState({ items: items });
   };
 
-  TapMinusBtn = () => {};
+  TapMinusBtn = (itemsValue) => {
+    const items = [...this.state.items];
+    const index = items.indexOf(itemsValue);
+    const count = items[index].count - 1;
+    items[index].count = count < 0 ? 0 : count;
+    this.setState({ items: items });
+  };
 
-  TapDeleteBtn = () => {};
+  TapDeleteBtn = (itemsValue) => {
+    const items = [...this.state.items];
+    const index = items.indexOf(itemsValue);
+    items.splice(index, 1);
+    this.setState({ items: items });
+  };
 
   render() {
     return (
