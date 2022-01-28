@@ -14,18 +14,12 @@ class Lists extends Component {
     const items = [...this.state.items];
     const index = items.indexOf(itemsValue);
     items[index].count++;
-    console.log(items[index]);
     this.setState({ items: items });
   };
 
-  TapMinusBtn = (itemsValue) => {
-    const items = [...this.state.items];
-    const index = items.indexOf(itemsValue);
-  };
+  TapMinusBtn = () => {};
 
-  TapDeleteBtn = () => {
-    console.log("gd");
-  };
+  TapDeleteBtn = () => {};
 
   render() {
     return (

@@ -1,6 +1,6 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 
-class ItemList extends PureComponent {
+class ItemList extends Component {
   TapPlusBtn = () => {
     this.props.TapPlusBtn(this.props.item);
   };
