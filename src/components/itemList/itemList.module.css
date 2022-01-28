@@ -1,0 +1,51 @@
+button {
+  font-size: 25px;
+  margin: 0 3px;
+  background-color: transparent;
+}
+
+.li {
+  list-style: none;
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 20px;
+  width: 30xp;
+  height: 30px;
+  color: #2d3436;
+}
+
+.count {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+  margin-right: 20px;
+  background-color: #74b9ff;
+  color: white;
+  border-radius: 50%;
+}
+
+.plusBtn,
+.minusBtn {
+  color: darkseagreen;
+  transition: transform 150ms ease-in;
+}
+
+.delBtn {
+  color: #e17055;
+  transition: transform 150ms ease-in;
+}
+
+.plusBtn:hover,
+.minusBtn:hover,
+.delBtn:hover {
+  transform: scale(1.2);
+}
