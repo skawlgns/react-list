@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ItemList from "../item_list/item_list";
+import ItemList from "../itemList/itemList";
+import AddItemBtn from "../addItemBtn/addItemBtn";
 
 class Lists extends Component {
   state = {
@@ -32,19 +33,30 @@ class Lists extends Component {
     this.setState({ items: items });
   };
 
+  AddItems = (name) => {
+    const items = [
+      ...this.state.items,
+      { id: Date.now(), name: name, count: 0 },
+    ];
+    this.setState({ items: items });
+  };
+
   render() {
     return (
-      <ul>
-        {this.state.items.map((v) => (
-          <ItemList
-            key={v.id}
-            item={v}
-            TapPlusBtn={this.TapPlusBtn}
-            TapMinusBtn={this.TapMinusBtn}
-            TapDeleteBtn={this.TapDeleteBtn}
-          />
-        ))}
-      </ul>
+      <>
+        <AddItemBtn AddItems={this.AddItems} />
+        <ul>
+          {this.state.items.map((v) => (
+            <ItemList
+              key={v.id}
+              item={v}
+              TapPlusBtn={this.TapPlusBtn}
+              TapMinusBtn={this.TapMinusBtn}
+              TapDeleteBtn={this.TapDeleteBtn}
+            />
+          ))}
+        </ul>
+      </>
     );
   }
 }
